@@ -4,12 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "mocha": "node_modules/.bin/mocha"
+    "mocha": "node_modules/.bin/mocha --timeout 10000"
   },
   "dependencies": {
     "chai": "^4.2.0",
     "chromedriver": "^2.46.0",
     "mocha": "^6.0.2",
+    "require-context": "^1.1.0",
     "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "devDependencies": {
