@@ -12,5 +12,7 @@
     "mocha": "^6.0.2",
     "selenium-webdriver": "^4.0.0-alpha.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  }
 }
