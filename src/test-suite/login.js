@@ -1,4 +1,4 @@
-const importTestCase = require('../commons/import-testcase');
+import importTestCase from '../commons/import-testcase';
 
 describe('login screen', () => {
   importTestCase('login fail', '../test-case/login/login-fail');

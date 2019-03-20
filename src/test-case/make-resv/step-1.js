@@ -1,5 +1,5 @@
-const driver = require('../../commons/driver');
-const { By, until } = require('selenium-webdriver');
+import { By, until } from 'selenium-webdriver';
+import driver from '../../commons/driver';
 
 it('cast list', async () => {
   await driver.get('https://sod.bla-one.net/ja/casts');

@@ -4,16 +4,22 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "mocha": "node_modules/.bin/mocha --timeout 10000"
+    "test": "node_modules/.bin/mocha --require @babel/register --timeout 10000"
   },
   "dependencies": {
     "chai": "^4.2.0",
     "chromedriver": "^2.46.0",
     "mocha": "^6.0.2",
-    "require-context": "^1.1.0",
     "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/register": "^7.4.0",
+    "@babel/runtime": "^7.4.0",
     "prettier": "^1.16.4"
   }
 }

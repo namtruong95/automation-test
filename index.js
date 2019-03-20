@@ -1,5 +1,5 @@
-const importTestCase = require('./src/commons/import-testcase');
-const driver = require('./src/commons/driver');
+import importTestCase from './src/commons/import-testcase';
+import driver from './src/commons/driver';
 
 describe('test user', () => {
   importTestCase('login', '../test-suite/login');

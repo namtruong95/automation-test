@@ -1,4 +1,4 @@
-const importTestCase = require('../commons/import-testcase');
+import importTestCase from '../commons/import-testcase';
 
 describe('make resv', () => {
   importTestCase('login success', '../test-case/login/login-success');

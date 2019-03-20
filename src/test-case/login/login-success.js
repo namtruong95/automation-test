@@ -1,6 +1,6 @@
-const driver = require('../../commons/driver');
-const { expect } = require('chai');
-const { By, Key, until } = require('selenium-webdriver');
+import { expect } from 'chai';
+import { By, Key, until } from 'selenium-webdriver';
+import driver from '../../commons/driver';
 
 it('success', async () => {
   await driver.get('https://sod.bla-one.net');

@@ -1,5 +1,7 @@
-module.exports = function importTestCase(name, path) {
+const importTestCase = (name, path) => {
   describe(name, () => {
     require(path);
   });
 };
+
+export default importTestCase;
