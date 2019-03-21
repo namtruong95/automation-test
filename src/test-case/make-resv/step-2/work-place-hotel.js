@@ -14,7 +14,7 @@ it('handle work place hotel', async () => {
 
     // enter hotel information
     // open collapse
-    await promiseDelay(1000);
+    await promiseDelay(500);
 
     const collapseEl = await driver.findElement(
       By.xpath(
@@ -40,7 +40,5 @@ it('handle work place hotel', async () => {
     await hotelRoomEl.sendKeys('1000000', Key.RETURN);
 
     return;
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 });

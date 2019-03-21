@@ -6,7 +6,7 @@
   "scripts": {
     "prettier:check": "./node_modules/.bin/prettier --config ./.prettierrc --ignore-path ./.prettierignore --list-different \"src/**/*{.js,.json,.md}\"",
     "prettier:fix": "./node_modules/.bin/prettier --config ./.prettierrc --ignore-path ./.prettierignore --write \"src/**/*{.js,.json,.md}\"",
-    "test": "node_modules/.bin/mocha --require @babel/register --timeout 10000"
+    "test": "node_modules/.bin/mocha --require @babel/register --timeout 20000"
   },
   "dependencies": {
     "chai": "^4.2.0",
