@@ -2,7 +2,7 @@ import { By, until } from 'selenium-webdriver';
 import { expect } from 'chai';
 import driver from '../../commons/driver';
 
-it('cast list', async () => {
+it('change cast', async () => {
   try {
     await driver.get('https://sod.bla-one.net/ja/casts');
 
