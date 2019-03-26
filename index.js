@@ -5,28 +5,37 @@ import readExcel from './src/commons/read-excel';
 
 const path = '/home/nam/Desktop/testcase.xlsx';
 
-describe('test user login', async () => {
-  const testDatas = readExcel(path)[0].data;
+describe('test user login', () => {
+  const workSheetsFromFile = readExcel(path);
 
-  testDatas.forEach((row, rowNumber) => {
-    if (!rowNumber) {
-      return;
-    }
+  // const testDataLogin = workSheetsFromFile[0].data;
 
+  // testDataLogin.forEach((row, rowNumber) => {
+  //   if (!rowNumber) {
+  //     return;
+  //   }
+
+  //   describe(`test row ${rowNumber}`, () => {
+  //     const testData = {
+  //       email: row[0],
+  //       password: row[1],
+  //     };
+
+  //     testLogin(testData);
+  //   });
+  // });
+
+  const testDataMakeResv = workSheetsFromFile[1].data;
+
+  testDataMakeResv.forEach((row, rowNumber) => {
     describe(`test row ${rowNumber}`, () => {
-      const testData = {
-        email: row[0],
-        password: row[1],
-      };
+      if (!rowNumber || !row[0]) {
+        return;
+      }
 
-      testLogin(testData);
+      makeResvFunc(row);
     });
   });
 
-  // times.forEach((time) => {
-  //   describe(`time ${time}`, () => {
-  //     makeResvFunc();
-  //   });
-  // });
   after(() => driver.quit());
 });

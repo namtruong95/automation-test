@@ -2,7 +2,7 @@ import { By, until } from 'selenium-webdriver';
 import { expect } from 'chai';
 import driver from '../../commons/driver';
 
-const castListFunc = () => {
+const castListFunc = (data) => {
   it('change cast', async () => {
     try {
       await driver.get('https://sod.bla-one.net/ja/casts');
@@ -25,9 +25,9 @@ const castListFunc = () => {
         return;
       } catch {}
 
-      // change first cast
+      // select cast
       const cast = await driver.findElement(
-        By.xpath('/html/body/sod-user-root/sod-user-cast/div/div[2]/div/div[1]/div[2]'),
+        By.xpath(`/html/body/sod-user-root/sod-user-cast/div/div[2]/div/div[1]/div[${data}]`),
       );
       await cast.click();
       await driver.wait(until.urlIs('https://sod.bla-one.net/ja/resv/make/step1'));

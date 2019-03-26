@@ -4,17 +4,27 @@ import step1Func from '../test-case/make-resv/step-1';
 import step2Func from '../test-case/make-resv/step-2';
 import step3Func from '../test-case/make-resv/step-3';
 
-const makeResvFunc = () => {
+const makeResvFunc = (row) => {
   describe('login', () => {
-    loginSuccess();
+    const data = {
+      email: 'example1@yopmail.com',
+      password: 'abcd1234',
+    };
+    loginSuccess(data);
   });
 
   describe('change cast', () => {
-    castListFunc();
+    const data = row[0];
+    castListFunc(data);
   });
 
   describe('step 1', () => {
-    step1Func();
+    const data = {
+      course: row[1],
+      courseDuration: row[2],
+      area: row[3],
+    };
+    step1Func(data);
   });
 
   describe('step 2', () => {

@@ -4,7 +4,10 @@ import driver from '../../commons/driver';
 
 const loginSuccess = (data) => {
   it('success', async () => {
-    await driver.get('https://sod.bla-one.net');
+    if (global.isAuth) {
+      return;
+    }
+    await driver.get('https://sod.bla-one.net/login');
 
     const titleLogin = await driver.getTitle();
     expect(titleLogin).to.equal('kakaka | Login');
@@ -12,6 +15,8 @@ const loginSuccess = (data) => {
     await driver.findElement(By.name('email')).sendKeys(data.email, Key.RETURN);
     await driver.findElement(By.name('password')).sendKeys(data.password, Key.RETURN);
     await driver.wait(until.urlIs('https://sod.bla-one.net/ja/home'));
+
+    global.isAuth = true;
 
     const titleHome = await driver.getTitle();
     expect(titleHome).to.equal('kakaka | user');
