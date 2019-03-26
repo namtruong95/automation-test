@@ -2,8 +2,8 @@
 
 Check the full generators on
 
-- [selenium]<https://seleniumhq.github.io/selenium/docs/api/javascript/index.html>
-- [mocha]<https://mochajs.org/>
+- [selenium](https://seleniumhq.github.io/selenium/docs/api/javascript/index.html)
+- [mocha](https://mochajs.org)
 
 ## Prerequisites
 
