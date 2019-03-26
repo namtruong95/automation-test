@@ -1,6 +1,13 @@
-import importTestCase from '../../../commons/import-testcase';
+import areaFunc from './area';
+import courseFunc from './course';
+import courseDurationFunc from './course-duration';
+import submitStep1Func from './submit';
 
-importTestCase('', '../test-case/make-resv/step-1/area');
-importTestCase('', '../test-case/make-resv/step-1/course');
-importTestCase('', '../test-case/make-resv/step-1/course-duration');
-importTestCase('', '../test-case/make-resv/step-1/submit');
+const step1Func = () => {
+  areaFunc();
+  courseFunc();
+  courseDurationFunc();
+  submitStep1Func();
+};
+
+export default step1Func;

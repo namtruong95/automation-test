@@ -3,40 +3,44 @@ import { expect } from 'chai';
 import driver from '../../../commons/driver';
 import promiseDelay from '../../../commons/promise-delay';
 
-it('make resv by phone', async () => {
-  try {
-    const phoneInputEl = await driver.findElement(
-      By.xpath(
-        `/html/body/sod-user-root/sod-user-pages/div/sod-user-make-resv-container/sod-user-make-resv-global/div/div[2]/sod-user-make-resv-step3/div/div/div[2]/div/div[2]/div/input`,
-      ),
-    );
-
+const makeResvByPhone = () => {
+  it('make resv by phone', async () => {
     try {
-      await driver.wait(until.elementIsVisible(phoneInputEl), 1000);
-    } catch {}
+      const phoneInputEl = await driver.findElement(
+        By.xpath(
+          `/html/body/sod-user-root/sod-user-pages/div/sod-user-make-resv-container/sod-user-make-resv-global/div/div[2]/sod-user-make-resv-step3/div/div/div[2]/div/div[2]/div/input`,
+        ),
+      );
 
-    await phoneInputEl.sendKeys('0905688666', Key.RETURN);
+      try {
+        await driver.wait(until.elementIsVisible(phoneInputEl), 1000);
+      } catch {}
 
-    const btnSendCodeEl = await driver.findElement(
-      By.xpath(
-        '/html/body/sod-user-root/sod-user-pages/div/sod-user-make-resv-container/sod-user-make-resv-global/div/div[2]/sod-user-make-resv-step3/div/div/div[2]/div/button[1]',
-      ),
-    );
+      await phoneInputEl.sendKeys('0905688666', Key.RETURN);
 
-    try {
-      await driver.wait(until.elementIsEnabled(btnSendCodeEl));
-    } catch {}
+      const btnSendCodeEl = await driver.findElement(
+        By.xpath(
+          '/html/body/sod-user-root/sod-user-pages/div/sod-user-make-resv-container/sod-user-make-resv-global/div/div[2]/sod-user-make-resv-step3/div/div/div[2]/div/button[1]',
+        ),
+      );
 
-    await btnSendCodeEl.click();
+      try {
+        await driver.wait(until.elementIsEnabled(btnSendCodeEl));
+      } catch {}
 
-    await driver.wait(until.elementIsEnabled(btnSendCodeEl), 5000);
+      await btnSendCodeEl.click();
 
-    await promiseDelay(1000);
+      await driver.wait(until.elementIsEnabled(btnSendCodeEl), 5000);
 
-    const modalEnterCodeEl = await driver.findElement(By.tagName('modal-container'));
+      await promiseDelay(1000);
 
-    await driver.wait(until.elementIsNotVisible(modalEnterCodeEl), 10000);
+      const modalEnterCodeEl = await driver.findElement(By.tagName('modal-container'));
 
-    return;
-  } catch (error) {}
-});
+      await driver.wait(until.elementIsNotVisible(modalEnterCodeEl), 10000);
+
+      return;
+    } catch (error) {}
+  });
+};
+
+export default makeResvByPhone;

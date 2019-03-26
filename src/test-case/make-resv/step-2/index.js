@@ -1,7 +1,15 @@
-import importTestCase from '../../../commons/import-testcase';
+import changeMethodCash from './payment-method-cash';
+import changeMethodPoint from './payment-method-point';
+import changeWorkPlaceHome from './work-place-home';
+import changeWorkPlaceHotel from './work-place-hotel';
+import submitStep2Func from './submit';
 
-importTestCase('', '../test-case/make-resv/step-2/payment-method-cash');
-// importTestCase('', '../test-case/make-resv/step-2/payment-method-point');
-importTestCase('', '../test-case/make-resv/step-2/work-place-home');
-importTestCase('', '../test-case/make-resv/step-2/work-place-hotel');
-importTestCase('', '../test-case/make-resv/step-2/submit');
+const step2Func = () => {
+  changeMethodCash();
+  changeMethodPoint();
+  changeWorkPlaceHome();
+  changeWorkPlaceHotel();
+  submitStep2Func();
+};
+
+export default step2Func;

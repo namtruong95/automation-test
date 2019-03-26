@@ -1,6 +1,11 @@
-import importTestCase from '../commons/import-testcase';
+import logout from '../test-case/login/logout';
+import loginFail from '../test-case/login/login-fail';
+import loginSuccess from '../test-case/login/login-success';
 
-Promise.all([
-  importTestCase('', '../test-case/login/login-fail'),
-  importTestCase('', '../test-case/login/login-success'),
-]);
+const testLogin = () => {
+  loginFail();
+  loginSuccess();
+  logout();
+};
+
+export default testLogin;

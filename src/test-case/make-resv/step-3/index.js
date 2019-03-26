@@ -1,9 +1,19 @@
-import importTestCase from '../../../commons/import-testcase';
+import makeResvByPhone from './by-phone';
+import registerInStep3 from './register';
+import loginInStep3 from './login';
+import changeOption from './option';
+import changeCoupon from './coupon';
+import changeResvName from './resv-name';
+import submitStep3Func from './submit';
 
-// importTestCase('', '../test-case/make-resv/step-3/by-phone');
-// importTestCase('', '../test-case/make-resv/step-3/register');
-importTestCase('', '../test-case/make-resv/step-3/login');
-importTestCase('', '../test-case/make-resv/step-3/option');
-importTestCase('', '../test-case/make-resv/step-3/coupon');
-importTestCase('', '../test-case/make-resv/step-3/resv-name');
-importTestCase('', '../test-case/make-resv/step-3/submit');
+const step3Func = () => {
+  makeResvByPhone();
+  registerInStep3();
+  loginInStep3();
+  changeOption();
+  changeCoupon();
+  changeResvName();
+  submitStep3Func();
+};
+
+export default step3Func;

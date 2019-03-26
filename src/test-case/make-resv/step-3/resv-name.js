@@ -2,16 +2,20 @@ import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 import driver from '../../../commons/driver';
 
-it('handle resv name', async () => {
-  try {
-    const inputResvNameEl = await driver.findElement(By.name('resv_name'));
-
+const changeResvName = () => {
+  it('handle resv name', async () => {
     try {
-      await driver.wait(until.elementIsVisible(inputResvNameEl), 1000);
-    } catch {}
+      const inputResvNameEl = await driver.findElement(By.name('resv_name'));
 
-    await inputResvNameEl.sendKeys('resv name', Key.RETURN);
+      try {
+        await driver.wait(until.elementIsVisible(inputResvNameEl), 1000);
+      } catch {}
 
-    return;
-  } catch (error) {}
-});
+      await inputResvNameEl.sendKeys('resv name', Key.RETURN);
+
+      return;
+    } catch (error) {}
+  });
+};
+
+export default changeResvName;

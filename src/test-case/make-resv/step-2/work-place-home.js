@@ -2,6 +2,7 @@ import { By, until, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 import driver from '../../../commons/driver';
 
+const changeWorkPlaceHome = () => {};
 it('handle work place home', async () => {
   try {
     const workPlaceEl = await driver.findElement(
@@ -27,3 +28,5 @@ it('handle work place home', async () => {
     return;
   } catch (error) {}
 });
+
+export default changeWorkPlaceHome;
