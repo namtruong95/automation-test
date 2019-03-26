@@ -5,9 +5,9 @@ import step2Func from '../test-case/make-resv/step-2';
 import step3Func from '../test-case/make-resv/step-3';
 
 const makeResvFunc = () => {
-  // describe('login', () => {
-  //   loginSuccess();
-  // });
+  describe('login', () => {
+    loginSuccess();
+  });
 
   describe('change cast', () => {
     castListFunc();

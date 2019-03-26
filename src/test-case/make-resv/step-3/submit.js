@@ -1,5 +1,6 @@
 import { By, until } from 'selenium-webdriver';
 import driver from '../../../commons/driver';
+import promiseDelay from '../../../commons/promise-delay';
 
 const submitStep3Func = () => {
   it('submit step 3', async () => {
@@ -12,6 +13,8 @@ const submitStep3Func = () => {
       await driver.wait(until.elementIsEnabled(btnSubmit));
       await btnSubmit.click();
       await driver.wait(until.urlIs('https://sod.bla-one.net/ja/resv/make/step4'));
+
+      await promiseDelay(2000);
       return;
     } catch (error) {}
   });
