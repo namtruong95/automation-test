@@ -33,13 +33,7 @@ const changeOption = (data) => {
 
     const optionsItem = await driver.findElements(By.className('ng-option'));
 
-    if (!optionsItem.length) {
-      console.log('options not found!');
-      return;
-    }
-
-    if (elementNumber >= optionsItem.length) {
-      console.log("can't change this option!");
+    if (!optionsItem.length || elementNumber >= optionsItem.length) {
       return;
     }
 

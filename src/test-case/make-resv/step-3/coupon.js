@@ -33,13 +33,7 @@ const changeCoupon = (data) => {
 
     const couponsItem = await driver.findElements(By.className('ng-option'));
 
-    if (!couponsItem.length) {
-      console.log('coupons not found!');
-      return;
-    }
-
-    if (elementNumber >= couponsItem.length) {
-      console.log("can't change this coupon!");
+    if (!couponsItem.length || elementNumber >= couponsItem.length) {
       return;
     }
 

@@ -33,13 +33,7 @@ const areaFunc = (data) => {
 
     const areasItem = await driver.findElements(By.className('ng-option'));
 
-    if (!areasItem.length) {
-      console.log('areas not found!');
-      return;
-    }
-
-    if (elementNumber >= areasItem.length) {
-      console.log("can't change this area!");
+    if (!areasItem.length || elementNumber >= areasItem.length) {
       return;
     }
 

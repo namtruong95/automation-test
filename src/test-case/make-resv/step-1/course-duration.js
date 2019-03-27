@@ -33,13 +33,7 @@ const courseDurationFunc = (data) => {
 
     const courseDurationsItem = await driver.findElements(By.className('ng-option'));
 
-    if (!courseDurationsItem.length) {
-      console.log('course durations not found!');
-      return;
-    }
-
-    if (elementNumber >= courseDurationsItem.length) {
-      console.log("can't change this course duration!");
+    if (!courseDurationsItem.length || elementNumber >= courseDurationsItem.length) {
       return;
     }
 
