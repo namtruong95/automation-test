@@ -14,15 +14,18 @@ const loginInStep3 = () => {
       await driver.wait(until.elementIsVisible(redirectLoginEl));
 
       redirectLoginEl.click();
-
-      await driver.wait(until.urlIs('https://sod.bla-one.net/ja/resv/make/step3/login'));
-
-      await driver.findElement(By.name('email')).sendKeys('example1@yopmail.com', Key.RETURN);
-      await driver.findElement(By.name('password')).sendKeys('abcd1234', Key.RETURN);
-
-      await driver.wait(until.urlIs('https://sod.bla-one.net/ja/resv/make/step3'), 1000);
+    } catch (error) {
       return;
-    } catch (error) {}
+    }
+
+    await driver.wait(until.urlIs('https://sod.bla-one.net/ja/resv/make/step3/login'));
+
+    await driver.findElement(By.name('email')).sendKeys('example1@yopmail.com', Key.RETURN);
+    await driver.findElement(By.name('password')).sendKeys('abcd1234', Key.RETURN);
+
+    await driver.wait(until.urlIs('https://sod.bla-one.net/ja/resv/make/step3'), 1000);
+
+    return;
   });
 };
 

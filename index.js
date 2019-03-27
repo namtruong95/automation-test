@@ -33,7 +33,7 @@ describe('test user login', () => {
         return;
       }
 
-      makeResvFunc(row);
+      makeResvFunc(row, rowNumber);
     });
   });
 

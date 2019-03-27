@@ -11,7 +11,7 @@ const submitStep1Func = () => {
 
     await driver.wait(until.elementIsEnabled(btnSubmit), 3000);
     await btnSubmit.click();
-    await driver.wait(until.urlIs('https://sod.bla-one.net/ja/resv/make/step2'));
+    await driver.wait(until.urlIs('https://sod.bla-one.net/ja/resv/make/step2'), 3000);
     return;
   });
 };

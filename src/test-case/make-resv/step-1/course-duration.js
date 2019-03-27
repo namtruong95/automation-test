@@ -20,7 +20,7 @@ const courseDurationFunc = (data) => {
         ),
       );
 
-      await driver.wait(until.elementIsNotVisible(loadingCourseDuration));
+      await driver.wait(until.elementIsNotVisible(loadingCourseDuration), 1000);
     } catch {}
 
     const courseDurationsSelectEl = await driver.findElement(

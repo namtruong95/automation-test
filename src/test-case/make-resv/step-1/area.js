@@ -20,7 +20,7 @@ const areaFunc = (data) => {
         ),
       );
 
-      await driver.wait(until.elementIsNotVisible(loadingArea));
+      await driver.wait(until.elementIsNotVisible(loadingArea), 1000);
     } catch {}
 
     const areasSelectEl = await driver.findElement(
